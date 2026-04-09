@@ -76,12 +76,53 @@ main {
   color: var(--fg);
 }
 
+.nav-link {
+  float: right;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--muted);
+  line-height: 1.35rem;
+  padding-top: 0.15em;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
 /* ── Home page ─────────────────────────────────────────────────── */
 
-.site-description {
-  font-style: italic;
+.home-intro {
+  margin-bottom: 2.5rem;
+}
+
+.home-intro p {
+  margin-bottom: 0.5rem;
   color: var(--muted);
-  margin-bottom: 2rem;
+}
+
+.home-intro p:first-child {
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--fg);
+}
+
+.home-intro a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+.home-intro a:hover {
+  opacity: 0.75;
+}
+
+.post-list-heading {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 .post-list {
