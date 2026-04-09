@@ -1,0 +1,19 @@
+title: My Blog
+description: Thoughts, ideas, and stories.
+url: ""
+baseurl: ""
+permalink: /:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

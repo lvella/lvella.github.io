@@ -1,0 +1,257 @@
+/* ── Reset & base ──────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Color scheme ──────────────────────────────────────────────── */
+
+:root {
+  --bg:       #fffff8;
+  --fg:       #111;
+  --muted:    #666;
+  --accent:   #8b0000;
+  --border:   #ddd;
+  --code-bg:  #f5f2ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #1a1a1a;
+    --fg:       #d8d4cf;
+    --muted:    #999;
+    --accent:   #e2725b;
+    --border:   #333;
+    --code-bg:  #252525;
+  }
+}
+
+/* ── Typography ────────────────────────────────────────────────── */
+
+body {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+               Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--fg);
+  background: var(--bg);
+
+  /* Ligatures & OpenType features */
+  font-feature-settings: "liga" 1, "clig" 1, "dlig" 1, "kern" 1,
+                          "onum" 1, "pnum" 1;
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ────────────────────────────────────────────────────── */
+
+main {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+/* ── Header ────────────────────────────────────────────────────── */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header nav {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem;
+}
+
+.site-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+/* ── Home page ─────────────────────────────────────────────────── */
+
+.site-description {
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  margin-bottom: 0.75rem;
+}
+
+.post-list time {
+  display: inline-block;
+  width: 10rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.post-list a {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-list a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 32rem) {
+  .post-list time {
+    display: block;
+    width: auto;
+    margin-bottom: 0.15rem;
+  }
+}
+
+/* ── Post ──────────────────────────────────────────────────────── */
+
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-header h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.post-header time {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.post-content {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.post-content p {
+  margin-bottom: 1.25rem;
+}
+
+.post-content h2 {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-content h3 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+.post-content a:hover {
+  opacity: 0.75;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.35rem;
+}
+
+.post-content code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+.post-content pre {
+  background: var(--code-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  line-height: 1.5;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ── Dropcap (first post paragraph) ────────────────────────────── */
+
+.post-content > p:first-child::first-letter {
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.8;
+  padding-right: 0.08em;
+  margin-top: 0.05em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+
+footer {
+  max-width: 38rem;
+  margin: 2rem auto 0;
+  padding: 1.5rem 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+/* ── Print ─────────────────────────────────────────────────────── */
+
+@media print {
+  body { font-size: 12pt; color: #000; background: #fff; }
+  .site-header, footer { display: none; }
+  a { color: inherit; border: none; }
+}
