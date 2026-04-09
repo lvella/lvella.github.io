@@ -83,6 +83,7 @@ main {
   color: var(--muted);
   line-height: 1.35rem;
   padding-top: 0.15em;
+  margin-left: 1.25rem;
 }
 
 .nav-link:hover {
@@ -285,8 +286,18 @@ footer {
   font-size: 0.85rem;
 }
 
+.footer-title {
+  margin-right: 1.25rem;
+}
+
 footer a {
   color: var(--muted);
+  text-decoration: none;
+  margin-right: 1.25rem;
+}
+
+footer a:hover {
+  color: var(--accent);
 }
 
 /* ── Print ─────────────────────────────────────────────────────── */
