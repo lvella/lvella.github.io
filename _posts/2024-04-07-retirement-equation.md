@@ -7,7 +7,7 @@ One day I wondered: how much money do I need to have in order to retire?
 
 I don’t know if I was bored or something, but instead of googling or writing an Excel spreadsheet (and by Excel, I really mean LibreOffice Calc), I developed a single differential equation to give me the answer. I left it on the side for a while and then lost the piece of paper it was written on. When I found it, I wrote a blog post so I wouldn’t need the paper anymore.
 
-Then I found the equation was wrong. I’m not sure why I initially thought it was right, but it didn’t simplify to the know formula for compound interest, so I took the post down. Then I had an epiphany while sleeping, and figured out what I now think to be the right equation. I am revising this blog post to correct that mistake.
+Then I found the equation was wrong. I’m not sure why I initially thought it was right, but it didn’t simplify to the known formula for compound interest, so I took the post down. Then I had an epiphany while sleeping, and figured out what I now think to be the right equation. I am revising this blog post to correct that mistake.
 
 It goes like this: given a time period, let’s say, a year (it works with any time period, you just have to keep it consistent), the inputs are:
 
@@ -86,7 +86,7 @@ We can easily figure out how long I have left until I run out of money, or, in o
 
 $$54321 \times 1.06^t - 4444 \times \frac{1.06^t - 1}{\log(1.06)} = 0$$
 
-Solve it for $t$, and you should agree with ChatGPT, who used sympy to figure out I have at most 21.38 years until I have to un-retire. Out of curisity, this is the Python code it used:
+Solve it for $t$, and you should agree with ChatGPT, who used sympy to figure out I have at most 21.38 years until I have to un-retire. Out of curiosity, this is the Python code it used:
 
 ```python
 from sympy import symbols, log, solve
@@ -122,9 +122,9 @@ That is it! Problem solved!
 
 But there are some flaws in this model. The first one is that it is a continuous approximation to a discrete process, because real expenses and investment yields are discrete events. Nevertheless, given the stated premises, I believe this to be a reasonably accurate average description.
 
-Another problem is that the premises are too simple. It doesn’t take into consideration taxes, pensions, health expenses that tends to increase with age, and possible many more factors that may apply to a particular situation. If you really want to use a differential equation for your retirement (instead of, say, Excel (LibreOffice Calc, really)), you may need to adapt it to your specific circumstances.
+Another problem is that the premises are too simple. It doesn’t take into consideration taxes, pensions, health expenses that tend to increase with age, and possibly many more factors that may apply to a particular situation. If you really want to use a differential equation for your retirement (instead of, say, Excel (LibreOffice Calc, really)), you may need to adapt it to your specific circumstances.
 
-But the real problem of this or any other model is that we can’t predict the future. This model is based on a fixed inflation, fixed APY, fixed expenses, fixed date of death, etc, but we we can’t really know or control any of those things (except maybe date of death, if you are not dead by then already).
+But the real problem of this or any other model is that we can’t predict the future. This model is based on a fixed inflation, fixed APY, fixed expenses, fixed date of death, etc, but we can’t really know or control any of those things (except maybe date of death, if you are not dead by then already).
 
 Such a model can still be useful, though, but you would have to once in a while plug in the numbers with the best available data, and correct course by either adjusting your expenses or finding a job before you are too old for it.
 
