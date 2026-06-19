@@ -40,51 +40,51 @@ $$C = C(0) \times J^t$$
 
 thus
 
-$$\frac{dC}{dt} = C(0) \times J^t \times \log(J)$$
+$$\frac{dC}{dt} = C(0) \times J^t \times \ln(J)$$
 
-$$dC = C(0) \times J^t \times \log(J) \times dt$$
+$$dC = C(0) \times J^t \times \ln(J) \times dt$$
 
 This is going in the direction we need, we have a rate of change to integrate, but it is not a function of the current principal. We need to decouple this slope from its starting condition, and get it for any instantaneous value of $C$. Fortunately for us, $C(t)$ appears right inside $dC$, and we can substitute:
 
-$$dC = C \times \log(J) \times dt$$
+$$dC = C \times \ln(J) \times dt$$
 
-Now we have the exact money increment $dC$ we gain for every infinitesimal time $dt$, for an instantaneous amount of money $C$. So this must be the same infinitesimal money increment we get for our investment yield component, but in relation to $P$ instead of $C$, as $P$ is our total amount of money: $P \times \log(J) \times dt$.
+Now we have the exact money increment $dC$ we gain for every infinitesimal time $dt$, for an instantaneous amount of money $C$. So this must be the same infinitesimal money increment we get for our investment yield component, but in relation to $P$ instead of $C$, as $P$ is our total amount of money: $P \times \ln(J) \times dt$.
 
 Putting everything together, we have:
 
-$$dP = P \log(J) \, dt - E \, dt$$
+$$dP = P \ln(J) \, dt - E \, dt$$
 
 If we ask Wolfram Alpha or ChatGPT to solve this for us (because I promptly forgot how to solve differential equations as soon as the course was over), we get:
 
-$$P(t) = K J^t + \frac{E}{\log(J)}$$
+$$P(t) = K J^t + \frac{E}{\ln(J)}$$
 
 where $K$ is the integration constant.
 
 Now we can ask all kinds of questions to this equation. One of the easiest is: “If I retire now, with $P(0)$ money, how much money will I have after $t$ years?” To answer this, we have to figure out $K$, so we plug $t = 0$, and solve this equation where the only unknown is $K$:
 
-$$P(0) = K J^0 + \frac{E}{\log(J)}$$
+$$P(0) = K J^0 + \frac{E}{\ln(J)}$$
 
 I don’t even need WolframAlpha to see that:
 
-$$K = P(0) - \frac{E}{\log(J)}$$
+$$K = P(0) - \frac{E}{\ln(J)}$$
 
 then, to calculate $P(t)$, i.e. your principal after living on it for $t$ years, just plug the numbers in the formula:
 
-$$P(t) = \frac{E}{\log(J)} + \left(P(0) - \frac{E}{\log(J)}\right) J^t$$
+$$P(t) = \frac{E}{\ln(J)} + \left(P(0) - \frac{E}{\ln(J)}\right) J^t$$
 
 or, if you prefer in a form that resembles the compound interest formula:
 
-$$P(t) = P(0) J^t - E \frac{J^t - 1}{\log(J)}$$
+$$P(t) = P(0) J^t - E \frac{J^t - 1}{\ln(J)}$$
 
 Example: I have ¥ 54,321 in a liquid investment with an inflation-corrected APY of $6\%$. My expenses are ¥ 4,444 per year. I live off this money. How much, in today’s ¥, corrected by inflation, will I have after 5 years? Well, just plug the numbers. The time scale (year, week) doesn’t matter, as long as all values are given over the same time scale. Obviously, the currency doesn’t matter either.
 
-$$P(5) = 54321 \times 1.06^5 - 4444 \times \frac{1.06^5 - 1}{\log(1.06)} \approx 46898.27$$
+$$P(5) = 54321 \times 1.06^5 - 4444 \times \frac{1.06^5 - 1}{\ln(1.06)} \approx 46898.27$$
 
-The answer turns out to be ¥ 46,898.27. With this starting value, and keeping my inflation-adjusted expenses fixed, which theoretically would give me the same living standards, I would have a limited amount of time until I had to un-retire (or be dead). This is always the case when the investment yield is not enough to cover both the expenses and the inflation (i.e. from our ODE, when $P(0) \log(J) < E$, as $P \log(J) \, dt$ is the gain component and $E \, dt$ is the expense component).
+The answer turns out to be ¥ 46,898.27. With this starting value, and keeping my inflation-adjusted expenses fixed, which theoretically would give me the same living standards, I would have a limited amount of time until I had to un-retire (or be dead). This is always the case when the investment yield is not enough to cover both the expenses and the inflation (i.e. from our ODE, when $P(0) \ln(J) < E$, as $P \ln(J) \, dt$ is the gain component and $E \, dt$ is the expense component).
 
 We can easily figure out how long I have left until I run out of money, or, in our equation terms, $P(t) = 0$:
 
-$$54321 \times 1.06^t - 4444 \times \frac{1.06^t - 1}{\log(1.06)} = 0$$
+$$54321 \times 1.06^t - 4444 \times \frac{1.06^t - 1}{\ln(1.06)} = 0$$
 
 Solve it for $t$, and you should agree with ChatGPT, who used sympy to figure out I have at most 21.38 years until I have to un-retire. Out of curiosity, this is the Python code it used:
 
@@ -114,7 +114,7 @@ But what about my original question? My inflation-adjusted APY is still $6\%$, b
 
 Well, the equation to solve is:
 
-$$P(52) = P(0) \times 1.06^{52} - 4444 \times \frac{1.06^{52} - 1}{\log(1.06)} = 0$$
+$$P(52) = P(0) \times 1.06^{52} - 4444 \times \frac{1.06^{52} - 1}{\ln(1.06)} = 0$$
 
 Using sympy to solve this, I found that $P(0) = 72582.13$, thus I have to amass the incredible sum of ¥ 72,582.13 in order to retire.
 
