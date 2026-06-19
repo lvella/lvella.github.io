@@ -80,7 +80,7 @@ Example: I have ¥ 54,321 in a liquid investment with an inflation-corrected APY
 
 $$P(5) = 54321 \times 1.06^5 - 4444 \times \frac{1.06^5 - 1}{\log(1.06)} \approx 46898.27$$
 
-The answer turns out to be ¥ 46,898.27. With this starting value, and keeping my inflation-adjusted expenses fixed, which theoretically would give me the same living standards, I would have a limited amount of time until I had to un-retire (or be dead). This is always the case when the investment yield is not enough to cover both the expenses and the inflation (i.e. $J \times P(0) - 1 < E$).
+The answer turns out to be ¥ 46,898.27. With this starting value, and keeping my inflation-adjusted expenses fixed, which theoretically would give me the same living standards, I would have a limited amount of time until I had to un-retire (or be dead). This is always the case when the investment yield is not enough to cover both the expenses and the inflation (i.e. from our ODE, when $P(0) \log(J) < E$, as $P \log(J) \, dt$ is the gain component and $E \, dt$ is the expense component).
 
 We can easily figure out how long I have left until I run out of money, or, in our equation terms, $P(t) = 0$:
 
