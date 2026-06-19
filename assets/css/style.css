@@ -9,22 +9,24 @@
 /* ── Color scheme ──────────────────────────────────────────────── */
 
 :root {
-  --bg:       #fffff8;
-  --fg:       #111;
-  --muted:    #666;
-  --accent:   #8b0000;
-  --border:   #ddd;
-  --code-bg:  #f5f2ee;
+  --bg:       #f3f7f9;
+  --fg:       #11212a;
+  --muted:    #5e717d;
+  --accent:   #0ea56b;
+  --accent-visited: #0b8f5d;
+  --border:   #d8e1e7;
+  --code-bg:  #eaf1f5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:       #1a1a1a;
-    --fg:       #d8d4cf;
-    --muted:    #999;
-    --accent:   #e2725b;
-    --border:   #333;
-    --code-bg:  #252525;
+    --bg:       #0f1b21;
+    --fg:       #d8e6ed;
+    --muted:    #92a6b1;
+    --accent:   #34d399;
+    --accent-visited: #2fba87;
+    --border:   #263740;
+    --code-bg:  #17272f;
   }
 }
 
@@ -117,6 +119,11 @@ main {
   opacity: 0.75;
 }
 
+.home-intro a:visited {
+  color: var(--accent-visited);
+  border-bottom-color: var(--accent-visited);
+}
+
 .post-list-heading {
   font-size: 1.1rem;
   text-transform: uppercase;
@@ -143,9 +150,13 @@ main {
 }
 
 .post-list a {
-  color: var(--fg);
+  color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid var(--border);
+}
+
+.post-list a:visited {
+  color: var(--accent-visited);
 }
 
 .post-list a:hover {
@@ -209,6 +220,11 @@ main {
 
 .post-content a:hover {
   opacity: 0.75;
+}
+
+.post-content a:visited {
+  color: var(--accent-visited);
+  border-bottom-color: var(--accent-visited);
 }
 
 .post-content blockquote {
@@ -349,14 +365,14 @@ footer a:hover {
   .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh,
   .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: #82aaff; }
   .highlight .nf, .highlight .fm                           { color: #82aaff; }
-  .highlight .nn, .highlight .nc, .highlight .no            { color: #f7ca88; }
+  .highlight .nn, .highlight .nc, .highlight .no            { color: #7ee787; }
   .highlight .o, .highlight .ow                             { color: #bbb; }
   .highlight .p, .highlight .pi                             { color: #ccc; }
-  .highlight .si, .highlight .se                            { color: #f7ca88; }
+  .highlight .si, .highlight .se                            { color: #7ee787; }
   .highlight .sr                                            { color: #82aaff; }
   .highlight .ss                                            { color: #a5d6a7; }
   .highlight .err { color: #ff5370; }
-  .highlight .cp, .highlight .nt                            { color: #f7ca88; }
+  .highlight .cp, .highlight .nt                            { color: #7ee787; }
   .highlight .na                                            { color: #82aaff; }
 }
 
