@@ -20,10 +20,9 @@ $i$
 
 This doesn't mean you can't retire with less, but if you have at least this much (and your inflation-adjusted expenses, investment returns, and inflation rate don't change), you can retire for sure. With less, you risk running out of money before dying.
 
-Practical example: suppose I need ₺ 10,000 per month to live, and get 1% return per month on my investments, and the inflation is 0.6% per month (notice I am using month instead of year, because the time period doesn't matter, as
-long as you stay consistent). Then, I need at least:
+Practical example: suppose I need ₺ 10,000 per month to live, and get 1% return per month on my investments, and the inflation is 0.6% per month (notice I am using month instead of year, because the time period doesn't matter, as long as you stay consistent). Then, I need at least:
 
-$$\frac{10,000}{\ln\left(\frac{1 + 1\%}{1 + 0.6\%}\right)} \approx ₺ \, 2,519,996.69.$$
+$$\frac{10,000}{\ln\left(\frac{1 + 0.01}{1 + 0.006}\right)} \approx ₺ \, 2,519,996.69.$$
 
 This post is kind of a follow-up to [The Retirement Equation]({% post_url 2024-04-07-retirement-equation %}), where we derived the following ordinary differential equation for the evolution of your principal $P$ over time, given only investment returns and expenses:
 
