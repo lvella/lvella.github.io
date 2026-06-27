@@ -155,6 +155,14 @@ main {
   border-bottom: 1px solid var(--border);
 }
 
+.post-language {
+  display: inline-block;
+  margin-right: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
 .post-list a:visited {
   color: var(--accent-visited);
 }

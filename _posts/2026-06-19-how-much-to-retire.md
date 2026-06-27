@@ -1,6 +1,7 @@
 ---
 title: "How much do I need to retire?"
 date: 2026-06-19
+language: en
 ---
 
 You need this much to retire:

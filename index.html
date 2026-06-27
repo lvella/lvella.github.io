@@ -10,8 +10,10 @@ layout: default
   <h2 class="post-list-heading">Writing</h2>
   <ul class="post-list">
     {% for post in site.posts %}
+    {% assign post_language = post.language | default: post.lang %}
     <li>
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+      {% if post_language %}<span class="post-language">({{ post_language | upcase }})</span>{% endif %}
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
     {% endfor %}

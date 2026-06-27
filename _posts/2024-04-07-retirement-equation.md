@@ -1,6 +1,7 @@
 ---
 title: "The Retirement Equation"
 date: 2024-04-07
+language: en
 ---
 
 One day I wondered: how much money do I need to have in order to retire?
