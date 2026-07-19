@@ -18,7 +18,9 @@ This is my personal blog.
 ## Contact
 
 - Email: [lvella@gmail.com](mailto:lvella@gmail.com)
+- Signal: [lvella.63](https://signal.me/#eu/E-YR-otjNENsFEVPAOuXEYz7nWIk_Uey14-quXCtROa7YdatVzxDIIgHeKqxAAAv)
 - GitHub: [lvella](https://github.com/lvella)
+- Reddit: [u/lcvella](https://www.reddit.com/user/lcvella/)
 - Instagram: [@lcvella](https://www.instagram.com/lcvella/)
 - LinkedIn: [Lucas Clemente Vella](https://www.linkedin.com/in/lucas-clemente-vella-56042b26/)
 
